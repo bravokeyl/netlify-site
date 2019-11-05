@@ -1,0 +1,17 @@
+build:
+  publish: build
+  lifecycle:
+  #   init:
+  #     - echo "Starting the build"
+    build:
+      - npm run build
+  #   finally: echo "Ending the build"
+
+plugins:
+  - type: "./plugins/netlify-plugin-sourcemaps"
+    config:
+      directory: build/static/
+      assetManifest: "./build/asset-manifest.json"
+  # - type: '@netlify/plugin-svgoptimizer'
+  #   config:
+  #     directory: /src/assets/
